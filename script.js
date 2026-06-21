@@ -4,9 +4,20 @@
 
 // Premium Preloader Animation Control
 (function() {
-    // Lock scrolling instantly
+    // Lock scrolling instantly on documentElement (always available)
     document.documentElement.classList.add('preloader-active');
-    document.body.classList.add('preloader-active');
+    
+    // Safely lock body scroll once it's available
+    const lockBodyScroll = () => {
+        if (document.body) {
+            document.body.classList.add('preloader-active');
+        }
+    };
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', lockBodyScroll);
+    } else {
+        lockBodyScroll();
+    }
 
     let width = 0;
     const progressInterval = setInterval(() => {
@@ -32,15 +43,21 @@
             if (preloader) {
                 preloader.classList.add('fade-out');
                 document.documentElement.classList.remove('preloader-active');
-                document.body.classList.remove('preloader-active');
+                if (document.body) {
+                    document.body.classList.remove('preloader-active');
+                }
             }
         }, 300);
     };
 
-    window.addEventListener('load', hidePreloader);
-    
-    // Safety Fallback (4 seconds max)
-    setTimeout(hidePreloader, 4000);
+    // Use 'load' event if page is still loading, otherwise hide immediately
+    if (document.readyState === 'complete') {
+        hidePreloader();
+    } else {
+        window.addEventListener('load', hidePreloader);
+        // Safety Fallback (4 seconds max)
+        setTimeout(hidePreloader, 4000);
+    }
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -299,23 +316,26 @@ Preferred Date: ${dateVal}`;
     const heroVideo = document.getElementById('hero-video-player');
     const heroImage = document.getElementById('hero-fallback-image');
     if (heroVideo) {
-        // Set dynamic video source based on screen width (desktop vs mobile viewport)
+        // Only load video on desktop screens (> 768px) to save bandwidth and prevent autoplay bugs
         const isMobile = window.innerWidth <= 768;
-        const videoSrc = isMobile ? 'assets/MOBILE.mp4' : 'assets/DESKTOP.mp4';
-        
-        const source = document.createElement('source');
-        source.setAttribute('src', videoSrc);
-        source.setAttribute('type', 'video/mp4');
-        heroVideo.appendChild(source);
-        heroVideo.load();
+        if (isMobile) {
+            heroVideo.remove();
+        } else {
+            const videoSrc = 'assets/DESKTOP.mp4';
+            const source = document.createElement('source');
+            source.setAttribute('src', videoSrc);
+            source.setAttribute('type', 'video/mp4');
+            heroVideo.appendChild(source);
+            heroVideo.load();
 
-        heroVideo.addEventListener('canplay', () => {
-            heroVideo.style.display = 'block';
-            if (heroImage) heroImage.style.display = 'none';
-        });
-        if (heroVideo.readyState >= 3) {
-            heroVideo.style.display = 'block';
-            if (heroImage) heroImage.style.display = 'none';
+            heroVideo.addEventListener('canplay', () => {
+                heroVideo.style.display = 'block';
+                if (heroImage) heroImage.style.display = 'none';
+            });
+            if (heroVideo.readyState >= 3) {
+                heroVideo.style.display = 'block';
+                if (heroImage) heroImage.style.display = 'none';
+            }
         }
     }
 
