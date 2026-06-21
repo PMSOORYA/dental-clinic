@@ -2080,3 +2080,140 @@ section {
         letter-spacing: 2px;
     }
 }
+
+/* ==========================================================================
+   Premium Brand Preloader
+   ========================================================================== */
+.preloader {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #182C22 0%, #0F1B15 100%);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s cubic-bezier(0.85, 0, 0.15, 1), 
+                visibility 0.6s cubic-bezier(0.85, 0, 0.15, 1),
+                transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+    visibility: visible;
+    opacity: 1;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+}
+
+.preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+}
+
+.preloader-logo-emblem {
+    width: 90px;
+    height: 90px;
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulseLogo 2.5s ease-in-out infinite;
+}
+
+.preloader-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.preloader-circle {
+    stroke-dasharray: 132;
+    stroke-dashoffset: 132;
+    animation: drawCircle 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    transform-origin: center;
+    transform: rotate(-90deg);
+}
+
+.preloader-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    animation: fadeInText 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+
+.preloader-title {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: var(--color-white);
+    line-height: 1;
+}
+
+.preloader-subtitle {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+}
+
+.preloader-loader-bar {
+    width: 160px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 8px;
+    opacity: 0;
+    animation: fadeInText 1s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+}
+
+.preloader-progress {
+    height: 100%;
+    width: 0%;
+    background-color: var(--accent-gold);
+    box-shadow: 0 0 8px var(--accent-gold);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animations */
+@keyframes drawCircle {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes pulseLogo {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 12px rgba(197, 168, 128, 0.25));
+    }
+    50% {
+        transform: scale(1.04);
+        filter: drop-shadow(0 0 24px rgba(197, 168, 128, 0.6));
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll lock when preloader is active */
+body.preloader-active {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+

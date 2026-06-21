@@ -2,6 +2,47 @@
    Sajada Dental Hospital - Premium Website Scripts
    ========================================================================== */
 
+// Premium Preloader Animation Control
+(function() {
+    // Lock scrolling instantly
+    document.documentElement.classList.add('preloader-active');
+    document.body.classList.add('preloader-active');
+
+    let width = 0;
+    const progressInterval = setInterval(() => {
+        const progress = document.querySelector('.preloader-progress');
+        if (progress) {
+            if (width >= 90) {
+                clearInterval(progressInterval);
+            } else {
+                width += Math.random() * 15;
+                if (width > 90) width = 90;
+                progress.style.width = width + '%';
+            }
+        }
+    }, 100);
+
+    const hidePreloader = () => {
+        clearInterval(progressInterval);
+        const progress = document.querySelector('.preloader-progress');
+        const preloader = document.getElementById('preloader');
+        if (progress) progress.style.width = '100%';
+        
+        setTimeout(() => {
+            if (preloader) {
+                preloader.classList.add('fade-out');
+                document.documentElement.classList.remove('preloader-active');
+                document.body.classList.remove('preloader-active');
+            }
+        }, 300);
+    };
+
+    window.addEventListener('load', hidePreloader);
+    
+    // Safety Fallback (4 seconds max)
+    setTimeout(hidePreloader, 4000);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // Global Configurations
