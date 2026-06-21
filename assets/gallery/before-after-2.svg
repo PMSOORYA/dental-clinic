@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" width="100%" height="100%">
+        <defs>
+            <clipPath id="clip">
+                <rect width="360" height="220" rx="16"/>
+            </clipPath>
+        </defs>
+        <g clip-path="url(#clip)">
+            
+            <!-- BEFORE (Left half, Yellowed shade) -->
+            <g transform="translate(0, 0)">
+                <rect x="0" y="0" width="180" height="220" fill="#0B1C3F"/>
+                <!-- Tooth - Off-white/Yellow tint -->
+                <path d="M90,100 C75,55 135,55 120,100 C112,120 122,150 110,180 C100,200 102,210 100,215 C98,210 98,200 90,180 C78,150 82,120 90,100 Z" fill="#E6D18C" stroke="#718096" stroke-width="3"/>
+                <text x="90" y="200" fill="#718096" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="bold" text-anchor="middle">BEFORE</text>
+            </g>
+            <!-- Divider Line (Gold) -->
+            <line x1="180" y1="0" x2="180" y2="220" stroke="#D4AF37" stroke-width="3"/>
+            <!-- AFTER (Right half, Brilliant white shade) -->
+            <g transform="translate(180, 0)">
+                <rect x="0" y="0" width="180" height="220" fill="#0F224A"/>
+                <!-- Tooth - Ultra White with sparkles -->
+                <path d="M90,100 C75,55 135,55 120,100 C112,120 122,150 110,180 C100,200 102,210 100,215 C98,210 98,200 90,180 C78,150 82,120 90,100 Z" fill="#FFFFFF" stroke="#0B1C3F" stroke-width="3"/>
+                <!-- Sparkles -->
+                <path d="M50,70 L53,75 L58,75 L54,79 L55,84 L50,80 L45,84 L46,79 L42,75 L47,75 Z" fill="#D4AF37"/>
+                <path d="M130,60 L133,65 L138,65 L134,69 L135,74 L130,70 L125,74 L126,69 L122,65 L127,65 Z" fill="#D4AF37"/>
+                <text x="90" y="200" fill="#D4AF37" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="bold" text-anchor="middle">AFTER</text>
+            </g>
+        
+        </g>
+    </svg>

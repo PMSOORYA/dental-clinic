@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" width="100%" height="100%">
+        <!-- Background -->
+        <rect width="100%" height="100%"  rx="16"/>
+        <defs>
+            <linearGradient id="serviceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0B1C3F" />
+                <stop offset="100%" stop-color="#1A2E5A" />
+            </linearGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#serviceGrad)" rx="16"/>
+        
+        
+            <!-- Row of teeth -->
+            <path d="M30,150 Q100,90 170,150" stroke="#0B1C3F" stroke-width="4" fill="none"/>
+            <!-- Teeth shapes -->
+            <path d="M50,132 C50,110 65,110 65,130" stroke="#0B1C3F" stroke-width="3" fill="#EBF0F5"/>
+            <path d="M65,123 C65,100 85,100 85,121" stroke="#0B1C3F" stroke-width="3" fill="#EBF0F5"/>
+            <path d="M85,118 C85,95 115,95 115,118" stroke="#0B1C3F" stroke-width="3" fill="#EBF0F5"/>
+            <path d="M115,121 C115,100 135,100 135,123" stroke="#0B1C3F" stroke-width="3" fill="#EBF0F5"/>
+            <path d="M135,130 C135,110 150,110 150,132" stroke="#0B1C3F" stroke-width="3" fill="#EBF0F5"/>
+            <!-- Metal brackets -->
+            <rect x="54" y="118" width="8" height="8" rx="1" fill="#718096" stroke="#0B1C3F" stroke-width="2"/>
+            <rect x="71" y="108" width="8" height="8" rx="1" fill="#718096" stroke="#0B1C3F" stroke-width="2"/>
+            <rect x="96" y="103" width="8" height="8" rx="1" fill="#718096" stroke="#0B1C3F" stroke-width="2"/>
+            <rect x="121" y="108" width="8" height="8" rx="1" fill="#718096" stroke="#0B1C3F" stroke-width="2"/>
+            <rect x="138" y="118" width="8" height="8" rx="1" fill="#718096" stroke="#0B1C3F" stroke-width="2"/>
+            <!-- Archwire (Gold) -->
+            <path d="M45,128 Q100,105 155,128" stroke="#D4AF37" stroke-width="2" fill="none"/>
+        
+        
+        <!-- Text Label -->
+        <text x="100" y="225" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="bold" text-anchor="middle" letter-spacing="0.5">METAL BRACES</text>
+    </svg>

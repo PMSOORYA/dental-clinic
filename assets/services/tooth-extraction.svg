@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" width="100%" height="100%">
+        <!-- Background -->
+        <rect width="100%" height="100%"  rx="16"/>
+        <defs>
+            <linearGradient id="serviceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0B1C3F" />
+                <stop offset="100%" stop-color="#1A2E5A" />
+            </linearGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#serviceGrad)" rx="16"/>
+        
+        
+            <!-- Shield/Safe Protection Outline -->
+            <path d="M50,60 C50,60 100,45 150,60 C150,110 135,160 100,185 C65,160 50,110 50,60 Z" fill="none" stroke="#EBF0F5" stroke-width="4"/>
+            <!-- Tooth being gently extracted/lifted -->
+            <path d="M80,85 C73,55 127,55 120,85 C115,100 122,120 113,135 C109,142 111,157 108,165 C104,157 103,138 98,134 C93,138 92,157 88,165 C85,157 87,142 83,135 C74,120 81,100 80,85 Z" fill="#FFFFFF" stroke="#0B1C3F" stroke-width="4"/>
+            <!-- Extraction motion vector (Gold) -->
+            <path d="M100,40 L100,15 M100,15 L95,22 M100,15 L105,22" stroke="#D4AF37" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="100" cy="90" r="18" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="4,4"/>
+        
+        
+        <!-- Text Label -->
+        <text x="100" y="225" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="bold" text-anchor="middle" letter-spacing="0.5">TOOTH EXTRACTION</text>
+    </svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" width="100%" height="100%">
+        <!-- Background -->
+        <rect width="100%" height="100%"  rx="16"/>
+        <defs>
+            <linearGradient id="serviceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0B1C3F" />
+                <stop offset="100%" stop-color="#1A2E5A" />
+            </linearGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#serviceGrad)" rx="16"/>
+        
+        
+            <!-- Veneer Overlay Concept -->
+            <path d="M80,70 C70,40 130,40 120,70 C115,85 125,120 112,140 C105,150 102,175 100,185" stroke="#718096" stroke-width="2" stroke-dasharray="4,4" fill="none"/>
+            <!-- The perfect veneer shell overlaying -->
+            <path d="M85,72 C78,45 133,45 125,72 C120,87 130,122 118,142 C108,155 108,185 105,195 C98,180 95,130 85,72 Z" fill="#FFFFFF" stroke="#D4AF37" stroke-width="4"/>
+            <!-- Shine/Light reflection -->
+            <path d="M92,80 Q96,60 105,80" stroke="#EBF0F5" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <!-- Arrow representing overlay alignment -->
+            <path d="M60,120 L75,105 M75,105 L70,102 M75,105 L78,110" stroke="#D4AF37" stroke-width="3" fill="none" stroke-linecap="round"/>
+        
+        
+        <!-- Text Label -->
+        <text x="100" y="225" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="bold" text-anchor="middle" letter-spacing="0.5">DENTAL VENEERS</text>
+    </svg>
